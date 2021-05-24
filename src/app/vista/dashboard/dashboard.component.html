@@ -1,0 +1,46 @@
+<div class="contendPrincipal">
+
+<h1>Plantel Magician Howard</h1>
+<div class="contendFlex">
+
+<form  (ngSubmit)="getStudents()"><input type="submit" class="fadeIn four" value="Estudiantes"> </form>
+<form  (ngSubmit)="getStaff()"><input type="submit" class="fadeIn four" value="Profesores"> </form>
+
+  <form [formGroup] = "casaForm" (ngSubmit)="getHome(casaForm.value.casa)" >
+    <select class="form-select" formControlName="casa">
+            <option selected>Seleccione una Casa</option>
+            <option value="slytherin">slytherin</option>
+            <option value="gryffindor">gryffindor</option>
+            <option value="ravenclaw ">ravenclaw</option>
+            <option value="hufflepuff">hufflepuff</option>
+        </select>
+        <input type="submit" class="fadeIn four" value="buscar">
+    
+  </form>
+
+</div>
+
+<div class="contend">
+<div class="bd-example">
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Patronus</th>
+        <th scope="col">Age</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let stu of task">
+        <th scope="row">{{ stu.name }}</th>
+        <td>{{ stu.patronus }}</td>
+        <td>{{ stu.yearOfBirth }}</td>
+        <td><img src="{{ stu.image }}" alt="Avatar" class="avatar"/><td>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+</div>
+</div>
